@@ -10,6 +10,8 @@
                 <food1>grasses</food1>
                 <food2>flowers</food2>
                 <food3>cacti</food3>
+                <food4>fruits</food4>
+                <food5>vegetables</food5>
             </diet>
             <size sex="male">
                 <length>30 inches</length>
@@ -28,6 +30,8 @@
                 <food1>algae</food1>
                 <food2>seagrasses</food2>
                 <food3>discarded fish</food3>
+                <food4>fruits</food4>
+                <food5>vegetables</food5>
             </diet>
             <size>
                 <length>31 to 47 inches</length>
@@ -41,8 +45,11 @@
             <lifespan>10 to 15 years</lifespan>
             <eggs>2 eggs</eggs>
             <diet>
-                <food1>insects</food1>
-                <food2>small vertebrates</food2>
+                <food1>moths</food1>
+                <food2>locusts</food2>
+                <food3>grasshoppers</food3>
+                <food4>beetles</food4>
+                <food5>crickets</food5>
             </diet>
             <size>
                 <length>11 to 15 inches</length>
@@ -57,6 +64,8 @@
                 <food1>lizards</food1>
                 <food2>birds</food2>
                 <food3>pigs</food3>
+                <food4>wallabies</food4>
+                <food5>antelope</food5>
             </diet>
             <size>
                 <length>33 feet</length>
@@ -73,6 +82,8 @@
                 <food1>fish</food1>
                 <food2>small mammals</food2>
                 <food3>aquatic vertebrates</food3>
+                <food4>crustaceans</food4>
+                <food5>frogs</food5>
             </diet>
             <size>
                 <length>2.44 to 3 meters</length>
@@ -87,6 +98,8 @@
                 <food1>turtles</food1>
                 <food2>snakes</food2>
                 <food3>small mammals</food3>
+                <food4>frogs</food4>
+                <food5>crustaceans</food5>
             </diet>
             <size sex="male">
                 <length>3.4 meters</length>
@@ -107,7 +120,8 @@
                 <food1>insects</food1>
                 <food2>lizards</food2>
                 <food3>birds</food3>
-                <food4>bird eggs</food4>
+                <food4>eggs</food4>
+                <food5>beetles</food5>
             </diet>
             <size>
                 <length>0.5 meters</length>

@@ -32,11 +32,11 @@
             table = `
                 <tr>
                     <th rowspan="2">Group of Reptiles</th>
-                    <th style="width:30%" rowspan="2">Name</th>
+                    <th style="width:25%" rowspan="2">Name</th>
                     <th rowspan="2">Lifespan</th>
                     <th rowspan="2">Eggs</th>
-                    <th rowspan="2">Diet</th>
                     <th colspan="2">Size</th>
+                    <th rowspan="2">Diet</th>
                 </tr>
                 <tr>
                     <th>Male</th>
@@ -45,6 +45,7 @@
             `;
 
             var Group = xmlDoc.getElementsByTagName("group_of_reptiles");
+            var Size = xmlDoc.getElementsByTagName("size");
             var Name = xmlDoc.getElementsByTagName("name");
             var Lifespan = xmlDoc.getElementsByTagName("lifespan");
             var Eggs = xmlDoc.getElementsByTagName("eggs");
@@ -52,28 +53,53 @@
             var Diet1 = xmlDoc.getElementsByTagName("food1");
             var Diet2 = xmlDoc.getElementsByTagName("food2");
             var Diet3 = xmlDoc.getElementsByTagName("food3");
+            var Diet4 = xmlDoc.getElementsByTagName("food4");
+            
             
             var Length = xmlDoc.getElementsByTagName("length");
             var Weight = xmlDoc.getElementsByTagName("weight");
 
-            for (i = 0, j = 1; i < 2; i++, j++) {
+            for (i = 0, j = 0; i < Name.length; i++, j++) {
+                if (Size[j].attributes[0] && Size[j].attributes[0].nodeValue == "female") {
+                    j+=1;}
                 table += `
                     <tr>
-                        ${ i==0 ? `<th rowspan ="2">${Group[0].attributes[0].nodeValue}</th>` : ''}
+                        ${ (i % 2) == 0 ? `<th rowspan ="2">${Group[i/2].attributes[0].nodeValue}</th>` : ``}
                         <td>${Name[i].childNodes[0].nodeValue}</td>
                         <td>${Lifespan[i].childNodes[0].nodeValue}</td>
                         <td>${Eggs[i].childNodes[0].nodeValue}</td>
+                        ${ Size[j].attributes[0] && Size[j].attributes[0].nodeValue == "male"?
+                        `<td>
+                            <ul>
+                                <li>${Length[j].childNodes[0].nodeValue}</li>
+                                <li>${Weight[j].childNodes[0].nodeValue}</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>${Length[j].childNodes[0].nodeValue}</li>
+                                <li>${Weight[j].childNodes[0].nodeValue}</li>
+                            </ul>
+                        </td>`
+                        :
+                        `<td colspan = "2">
+                            <ul>
+                                <li>${Length[j].childNodes[0].nodeValue}</li>
+                                <li>${Weight[j].childNodes[0].nodeValue}</li>
+                            </ul>
+                        </td>`
+                        }
                         <td>
                             <ul>
                                 <li>${Diet1[i].childNodes[0].nodeValue}</li>
                                 <li>${Diet2[i].childNodes[0].nodeValue}</li>
                                 <li>${Diet3[i].childNodes[0].nodeValue}</li>
+                                <li>${Diet4[i].childNodes[0].nodeValue}</li>
+                                
                             </ul>
                         </td>
-                        <td>${Length[i].childNodes[0].nodeValue}</td>
-                        <td>${Weight[i].childNodes[0].nodeValue}</td>
                     </tr>
-                `;
+                `;     
             }
             document.getElementById("rep").innerHTML = table;
         }
